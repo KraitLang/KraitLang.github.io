@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Krait Language</title>
+  <link rel="icon" type="image/png" href="krait-logo.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fira Code', monospace;
+      background-color: #0f111a;
+      color: #f8f8f2;
+    }
+
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background-color: #1a1c28;
+      border-bottom: 2px solid #444;
+    }
+
+    header img {
+      width: 150px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #bbbbbb;
+    }
+
+    nav {
+      margin-top: 1.5rem;
+    }
+
+    nav a {
+      color: #8be9fd;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #50fa7b;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+    }
+
+    pre {
+      background-color: #282a36;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+
+    code {
+      color: #ffb86c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #1a1c28;
+      border-top: 1px solid #333;
+      font-size: 0.95rem;
+      color: #999;
+    }
+
+    a {
+      color: #bd93f9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="krait-logo.png" alt="Krait Logo">
+    <h1>Krait</h1>
+    <p><em>Bite into bare metal.</em></p>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#examples">Examples</a>
+      <a href="#docs">Docs</a>
+      <a href="#download">Download</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="features">
+      <h2>Why Krait?</h2>
+      <ul>
+        <li>Transpiles directly to NASM assembly</li>
+        <li>Perfect for kernel and bootloader development</li>
+        <li>Includes <code>typedef</code>, <code>namespace</code>, inline <code>asm</code>, and memory access</li>
+        <li>No runtime, no garbage collection – raw control over hardware</li>
+        <li>Simple, readable syntax but with powerful system-level capabilities</li>
+      </ul>
+    </section>
+
+    <section id="examples">
+      <h2>Hello, Krait</h2>
+      <pre><code>let int x = 3;
+let int y = 4;
+let int sum = x + y;
+print sum;</code></pre>
+
+      <h3>Pointer Access</h3>
+      <pre><code>let int* ptr = &x;
+print *ptr;</code></pre>
+
+      <h3>Inline Assembly</h3>
+      <pre><code>asm {
+  mov rax, 1
+  mov rdi, 1
+  lea rsi, [message]
+  mov rdx, 13
+  syscall
+}</code></pre>
+    </section>
+
+    <section id="docs">
+      <h2>Documentation</h2>
+      <p>The Krait language is designed for systems programming enthusiasts. It’s lightweight, direct, and powerful. You can:</p>
+      <ul>
+        <li>Write a kernel with full memory control</li>
+        <li>Use namespaces to organize your code</li>
+        <li>Define low-level types and structures</li>
+        <li>Embed assembly for device control</li>
+        <li>Control hardware without the overhead of a runtime</li>
+      </ul>
+      <p>Documentation will be published soon. Stay tuned for the developer handbook and example OS projects.</p>
+    </section>
+
+    <section id="download">
+      <h2>Download</h2>
+      <p>You can get started with Krait right now:</p>
+      <ul>
+        <li><a href="https://github.com/yourname/krait" target="_blank">View on GitHub</a></li>
+        <li>Run <code>python3 krait_transpiler.py yourfile.krait</code></li>
+        <li>Compile the result with NASM + LD into a bootable binary</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Krait Language Project. Open hardware begins with open code.</p>
+  </footer>
+</body>
+</html>
